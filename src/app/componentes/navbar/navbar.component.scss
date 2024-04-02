@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+    padding: 0;
+   
+}
+img{
+    width: 150px;
+    height: 60px;
+}
+nav{
+    border-bottom: solid white;
+    color: aliceblue;
+}
+.lista{
+    
+    ul{
+        display: inline-flex;
+        li{
+            list-style: none;
+            margin-left: 20px;
+            cursor: pointer;
+            a{
+
+                text-decoration: none;
+                color:white;
+            }
+        }
+    }
+}
+
+button{
+    background-color: rgb(242, 255, 0);
+    color: aliceblue;
+    margin-left: 50rem;
+   }

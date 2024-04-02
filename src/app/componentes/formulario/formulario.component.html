@@ -1,0 +1,139 @@
+<div class="contain">
+    <div class="row">
+        <div class="col-6">
+
+
+            <form [formGroup]="miFormulario"
+             (ngSubmit)="onSubmit()"
+              class="row g-3">
+                <div class="row mb-3">
+                    <label  for="Nombre" class="col-sm- col-form-label">Nombre del Alumno</label>
+                    <div class="col-sm-10">
+                        <input 
+                        formControlName="nombreDelAlumno" 
+                        type="text"
+                        class="form-control" 
+                        id="Nombre"
+                        [class.is-valid]="nombreDelAlumnoControl?.valid"
+                        [class.is-invalid]="nombreDelAlumnoControl?.touched && nombreDelAlumnoControl?.invalid">
+                        <div class="valid-feedback">
+                           
+                        </div>
+                        <div class="invalid-feedback">
+                            CORROBORE, NO DEBE TENER NUMEROS!
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="Apellido" class="col-sm- col-form-label">Apellido del Alumno</label>
+                    <div class="col-sm-10">
+                        <input
+                         formControlName="apellidoDelAlumno" 
+                         type="text" 
+                         class="form-control" 
+                         id="Apellido"
+                         [class.is-valid]="apellidoDelAlumnoControl?.valid"
+                         [class.is-invalid]="apellidoDelAlumnoControl?.touched && apellidoDelAlumnoControl?.invalid">
+                         <div class="valid-feedback">
+                           
+                         </div>
+                         <div class="invalid-feedback">
+                             CORROBORE, NO DEBE TENER NUMEROS!
+                         </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail" class="col-sm- col-form-label">Email del Alumno</label>
+                    <div class="col-sm-10">
+                        <input 
+                        formControlName="emailDelAlumno" 
+                        type="email" 
+                        class="form-control" 
+                        id="inputEmail"
+                        [class.is-valid]="emailDelAlumboControl?.valid"
+                         [class.is-invalid]="emailDelAlumboControl?.touched && emailDelAlumboControl?.invalid">
+                   
+                        <div class="valid-feedback">
+                            email valido!
+                        </div>
+                        <div class="invalid-feedback">
+                            email invalido!
+                        </div>
+                        <div *ngIf="emailDelAlumboControl?.hasError('soloGmail')" class="invalid-feedback">
+                            Recuerda solo GMAIL.COM
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="Nota" class="col-sm- col-form-label">Nota FInal</label>
+                    <div class="col-sm-10">
+                        <input 
+                        formControlName="notaFinal" 
+                        type="text" 
+                        class="form-control" 
+                        id="number"
+                        [class.is-valid]="notaFinalControl?.valid"
+                         [class.is-invalid]="notaFinalControl?.touched && notaFinalControl?.invalid">
+                        <div class="feedback">
+                           Ingrese nota del 1 al 10
+                        </div>
+                        <div class="valid-feedback">
+                           Nota ingresada correctamente
+                        </div>
+                        <div class="invalid-feedback">
+                            Nota invalida
+                        </div>
+                    </div>
+                </div>
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Estado</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input formControlName="estado" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                value="Aprobado" 
+                                [class.is-valid]="estadoControl?.valid"
+                                [class.is-invalid]="estadoControl?.invalid"
+                                >
+                            <label class="form-check-label aprobado" for="gridRadios1">
+                               Aprobado
+                            </label>
+                        </div>
+                        <div class="form-check ">
+                            <input formControlName="estado" class="form-check-input "  type="radio" name="gridRadios" id="gridRadios2"
+                                value="Recupera"
+                                [class.is-valid]="estadoControl?.valid"
+                                [class.is-invalid]="estadoControl?.invalid">
+                            <label class="form-check-label recupera " >
+                                Recupera
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input formControlName="estado" class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+                                value="Recursa"
+                                [class.is-valid]="estadoControl?.valid"
+                                [class.is-invalid]="estadoControl?.invalid">
+                            <label class="form-check-label recursa" for="gridRadios3">
+                                Recursa
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+
+        </div>
+        <!-- 
+
+            <div class="col-6">
+                <pre>
+                    {{miFormulario.status}}
+                </pre>
+                
+                <pre>{{miFormulario.value | json}}</pre>
+            </div>
+        -->
+    </div>
+
+</div>
+
